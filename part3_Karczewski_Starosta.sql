@@ -43,4 +43,12 @@ USE HR;
 --SELECT COUNT(DISTINCT manager_id) as 'Number of managers' FROM employees;
 
 /* 14. */
-SELECT (max(salary) - min(salary)) AS DIFFERENCE FROM employees;
+--SELECT (max(salary) - min(salary)) AS DIFFERENCE FROM employees;
+
+/* 15 */
+--SELECT location_id, street_address, city, state_province, country_name FROM locations, countries WHERE locations.country_id = countries.country_id;
+
+/* 16 */
+--SELECT last_name, department_name FROM employees, departments WHERE employees.department_id = departments.department_id;
+
+/* 17 */
