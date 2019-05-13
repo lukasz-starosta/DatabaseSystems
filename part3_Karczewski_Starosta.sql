@@ -52,3 +52,4 @@ USE HR;
 --SELECT last_name, department_name FROM employees, departments WHERE employees.department_id = departments.department_id;
 
 /* 17 */
+--SELECT last_name, job_id, employees.department_id, department_name FROM employees, departments, locations WHERE employees.department_id = departments.department_id AND departments.location_id = locations.location_id AND locations.city = 'Toronto';
