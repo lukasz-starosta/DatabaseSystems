@@ -10,4 +10,22 @@ USE HR;
 --SELECT count(*) FROM employees WHERE last_name LIKE '%' + 'n';
 
 /* 4 */
-SELECT department_name, city, (SELECT count(*) FROM employees WHERE department_id = Dep.department_id) FROM departments Dep, locations WHERE Dep.location_id = locations.location_id;
+--SELECT department_name, city, (SELECT count(*) FROM employees WHERE department_id = Dep.department_id) FROM departments Dep, locations WHERE Dep.location_id = locations.location_id;
+
+/* 5 */
+--SELECT * FROM employees WHERE day(hire_date) < 6;
+
+/* 6 */
+--SELECT department_id, min(salary) FROM employees WHERE department_id = (SELECT TOP 1 department_id FROM employees GROUP BY department_id ORDER BY avg(salary) ASC) GROUP BY department_id;
+
+/* 7 */
+--SELECT department_id, department_name, manager_id, location_id FROM departments WHERE department_id NOT IN (SELECT DISTINCT department_id FROM employees WHERE job_id = 'SA_*');
+
+/* 8 */
+
+
+/* 9 */
+--SELECT month(hire_date), count(*) as people_hired FROM employees GROUP BY month(hire_date);
+
+/* 10 */
+SELECT country_name, count(*) as places FROM locations, countries WHERE locations.country_id = countries.country_id GROUP BY country_name;
